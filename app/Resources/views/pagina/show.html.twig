@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pagina</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pagina.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ pagina.title }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ pagina.slug }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ pagina.content }}</td>
+            </tr>
+            <tr>
+                <th>Ishome</th>
+                <td>{% if pagina.isHome %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Inmenu</th>
+                <td>{% if pagina.inMenu %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('pagina_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('pagina_edit', { 'id': pagina.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
