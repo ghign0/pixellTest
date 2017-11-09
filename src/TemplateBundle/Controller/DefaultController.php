@@ -14,4 +14,15 @@ class DefaultController extends Controller
     {
         return $this->render('TemplateBundle:Default:index.html.twig');
     }
+
+
+    /**
+     *
+     * @Route(/{slug} , name="view_page")
+     */
+    public function viewPage( $slug )
+    {
+        $pagina = new Pagina();
+        $em = $this->getDoctrine()->getManager();
+    }
 }

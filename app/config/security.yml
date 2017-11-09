@@ -25,7 +25,10 @@ security:
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            http_basic: ~
+            # http_basic: ~
+            form_login:
+                check_path: /admin/login
+                login_path: /admin/login
             logout :
                 path: /admin/logout
                 target: /admin
@@ -34,4 +37,5 @@ security:
             #form_login: ~
 
     access_control:
+        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, roles: ROLE_SUPER_ADMIN }

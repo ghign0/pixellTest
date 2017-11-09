@@ -39,6 +39,10 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    paths:
+        '%kernel.project_dir%/app/Resources/views/AdminTemplate' : adminTemplate
+        '%kernel.project_dir%/app/Resources/views/SimpleTemplate' : template
+
 
 # Doctrine Configuration
 doctrine:

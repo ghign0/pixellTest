@@ -24,10 +24,10 @@ class PaginaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $paginas = $em->getRepository('AdminBundle:Pagina')->findAll();
+        $pagine = $em->getRepository('AdminBundle:Pagina')->findAll();
 
-        return $this->render('pagina/index.html.twig', array(
-            'paginas' => $paginas,
+        return $this->render('@adminTemplate/pagina/index.html.twig', array(
+            'pagine' => $pagine,
         ));
     }
 
@@ -51,7 +51,7 @@ class PaginaController extends Controller
             return $this->redirectToRoute('pagina_show', array('id' => $pagina->getId()));
         }
 
-        return $this->render('pagina/new.html.twig', array(
+        return $this->render('@adminTemplate/pagina/new.html.twig', array(
             'pagina' => $pagina,
             'form' => $form->createView(),
         ));
@@ -67,7 +67,7 @@ class PaginaController extends Controller
     {
         $deleteForm = $this->createDeleteForm($pagina);
 
-        return $this->render('pagina/show.html.twig', array(
+        return $this->render('@adminTemplate/pagina/show.html.twig', array(
             'pagina' => $pagina,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -91,7 +91,7 @@ class PaginaController extends Controller
             return $this->redirectToRoute('pagina_edit', array('id' => $pagina->getId()));
         }
 
-        return $this->render('pagina/edit.html.twig', array(
+        return $this->render('@adminTemplate/pagina/edit.html.twig', array(
             'pagina' => $pagina,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
