@@ -1,0 +1,11 @@
+{% extends '@adminTemplate/base.html.twig' %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            Ciao <b>{{app.user}}</b>, <br>
+            vai al modulo delle <a href="{{path('pagina_index')}}">pagine</a> per modificare il tuo sito
+        </div>
+    </div>
+{% endblock %}

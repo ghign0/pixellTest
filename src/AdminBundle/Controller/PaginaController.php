@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Pagina controller.
  *
- * @Route("/admin/pagina")
+ * @Route("/pagina")
  */
 class PaginaController extends Controller
 {
@@ -48,7 +48,7 @@ class PaginaController extends Controller
             $em->persist($pagina);
             $em->flush();
 
-            return $this->redirectToRoute('pagina_show', array('id' => $pagina->getId()));
+            return $this->redirectToRoute('pagina_index');
         }
 
         return $this->render('@adminTemplate/pagina/new.html.twig', array(

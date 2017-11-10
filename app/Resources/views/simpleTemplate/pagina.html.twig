@@ -1,0 +1,21 @@
+{% extends '@template/base.html.twig' %}
+
+{% block stylesheets %}
+{{parent()}}
+{% endblock %}
+
+{% block content %}
+
+<h1>{{pagina.title}}</h1>
+
+<p>{{pagina.content}}</p>
+
+{% endblock %}
+
+{% block footer %}
+{{parent()}}
+{% endblock %}
+
+{% block javascripts %}
+{{parent()}}
+{% endblock %}

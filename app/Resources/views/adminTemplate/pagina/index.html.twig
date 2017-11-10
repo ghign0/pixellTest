@@ -1,0 +1,47 @@
+{% extends '@adminTemplate/base.html.twig' %}
+
+{% block content %}
+    <h1>Lista delle pagine</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Slug</th>
+                <th>Content</th>
+                <th>Ishome</th>
+                <th>Inmenu</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pagina in pagine %}
+            <tr>
+                <td><a href="{{ path('pagina_show', { 'id': pagina.id }) }}">{{ pagina.id }}</a></td>
+                <td>{{ pagina.title }}</td>
+                <td>{{ pagina.slug }}</td>
+                <td>{{ pagina.content }}</td>
+                <td>{% if pagina.isHome %}Yes{% else %}No{% endif %}</td>
+                <td>{% if pagina.inMenu %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('pagina_show', { 'id': pagina.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('pagina_edit', { 'id': pagina.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('pagina_new') }}">Crea nuova pagina</a>
+        </li>
+    </ul>
+{% endblock %}

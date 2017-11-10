@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/admin", name="admin_homepage")
+     * @Route("/", name="admin_homepage")
      */
     public function indexAction()
     {
@@ -22,7 +22,7 @@ class DefaultController extends Controller
      * @param Request
      * @return [type] [description]
      *
-     * @Route("/admin/login", name="login")
+     * @Route("/login", name="login")
      */
     public function loginAction(Request $request)
     {

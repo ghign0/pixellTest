@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('dist/bootstrap/css/bootstrap.min.css')}}">
+            <link rel="stylesheet" href="{{ asset('dist/bootstrap/css/style.css')}}">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% embed '@template/assets/header.html.twig' %}
+        {% endembed %}
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <footer>
+            {% block footer %}{% endblock %}
+        </footer>
+        {% block javascripts %}
+            <script src="{{asset('dist/jquery/jquery.min.js')}}" charset="utf-8"></script>
+            <script src="{{asset('dist/bootstrap/js/bootstrap.bundle.min.js')}}" charset="utf-8"></script>
+        {% endblock %}
+    </body>
+</html>

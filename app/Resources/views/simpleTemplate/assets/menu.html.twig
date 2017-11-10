@@ -1,0 +1,15 @@
+<ul class="navbar-nav ml-auto">
+    {% block navContent %}
+        <li class="nav-item">
+            <a href="{{path('homepage')}}" class="nav-link">home</a>
+        </li>
+        {% for item in menu %}
+        <li class="nav-item active">
+            <a href="{{path('view_page', {'slug' : item.slug })}}" class="nav-link">{{item.title}}</a>
+        </li>
+        {% endfor %}
+        <li class="nav-item">
+            <a href="{{path('admin_homepage')}}" class="nav-link">area admin</a>
+        </li>
+    {% endblock %}
+</ul>

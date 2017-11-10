@@ -6,7 +6,7 @@ template:
 admin:
     resource: "@AdminBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /admin
 
 logout :
     path : /admin/logout
